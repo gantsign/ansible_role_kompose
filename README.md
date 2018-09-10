@@ -1,38 +1,151 @@
-Role Name
-=========
+Ansible Role: Kompose
+=====================
 
-A brief description of the role goes here.
+[![Build Status](https://travis-ci.com/gantsign/ansible_role_kompose.svg?branch=master)](https://travis-ci.com/gantsign/ansible_role_kompose)
+[![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.kompose-blue.svg)](https://galaxy.ansible.com/gantsign/kompose)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible_role_kompose/master/LICENSE)
+
+Role to download and install [Kompose](https://kompose.sh) the tool for
+converting Docker Compose files to Kubernetes resources.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+* Ansible >= 2.4
+
+* Linux Distribution
+
+    * Debian Family
+
+        * Debian
+
+            * Jessie (8)
+            * Stretch (9)
+
+        * Ubuntu
+
+            * Trusty (14.04)
+            * Xenial (16.04)
+            * Bionic (18.04)
+
+    * RedHat Family
+
+        * CentOS
+
+            * 7
+
+    * Note: other versions are likely to work but have not been tested.
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+The following variables will change the behavior of this role (default values
+are shown below):
 
-Dependencies
-------------
+```yaml
+# Kompose version number
+kompose_version: '1.16.0'
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+# SHA256 sum for the redistributable Kompose package (i.e. kompose-linux-amd64.tar.gz)
+kompose_redis_sha256sum: 'de5940e74a22199c4eeb34d0b9fdae5ad65cce161e2607c7055899bc87c9c25b'
+
+# Mirror to download the Kompose from
+kompose_mirror: 'https://github.com/kubernetes/kompose/releases/download/v{{ kompose_version }}'
+
+# Directory to store files downloaded for Kompose
+kompose_download_dir: "{{ x_ansible_download_dir | default(ansible_env.HOME + '/.ansible/tmp/downloads') }}"
+```
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+```yaml
+- hosts: servers
+  roles:
+    - role: gantsign.kompose
+```
 
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
+Tab Completion for Zsh
+----------------------
+
+### Using Ansible
+
+We recommend using the
+[gantsign.antigen](https://galaxy.ansible.com/gantsign/antigen) role to enable
+tab completion for Kompose (this must be configured for each user).
+
+```yaml
+- hosts: servers
+  roles:
+    - role: gantsign.kompose
+
+    - role: gantsign.antigen
+      users:
+        - username: example
+          antigen_bundles:
+            - name: kompose
+              url: gantsign/zsh-plugins
+              location: kompose
+```
+
+### Using Antigen
+
+If you prefer to use [Antigen](https://github.com/zsh-users/antigen) directly
+add the following to your Antigen configuration:
+
+```bash
+antigen bundle gantsign/zsh-plugins kompose
+```
+
+### Manual configuration
+
+To manually configure Zsh add the following to your `.zshrc`:
+
+```bash
+eval "$(kompose completion zsh)"
+```
+
+More Roles From GantSign
+------------------------
+
+You can find more roles from GantSign on
+[Ansible Galaxy](https://galaxy.ansible.com/gantsign).
+
+Development & Testing
+---------------------
+
+This project uses [Molecule](http://molecule.readthedocs.io/) to aid in the
+development and testing; the role is unit tested using
+[Testinfra](http://testinfra.readthedocs.io/) and
+[pytest](http://docs.pytest.org/).
+
+To develop or test you'll need to have installed the following:
+
+* Linux (e.g. [Ubuntu](http://www.ubuntu.com/))
+* [Docker](https://www.docker.com/)
+* [Python](https://www.python.org/) (including python-pip)
+* [Ansible](https://www.ansible.com/)
+* [Molecule](http://molecule.readthedocs.io/)
+
+Because the above can be tricky to install, this project uses
+[Molecule Wrapper](https://github.com/gantsign/molecule-wrapper), which can
+install all of them apart for Linux itself.
+
+To test this role run the following command from the project root:
+
+```bash
+./moleculew test
+```
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+John Freeman
+
+GantSign Ltd.
+Company No. 06109112 (registered in England)
