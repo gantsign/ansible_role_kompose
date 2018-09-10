@@ -5,7 +5,7 @@ Ansible Role: Kompose
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.kompose-blue.svg)](https://galaxy.ansible.com/gantsign/kompose)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible_role_kompose/master/LICENSE)
 
-Role to download and install [Kompose](https://kompose.sh) the tool for
+Role to download and install [Kompose](http://kompose.io) the tool for
 converting Docker Compose files to Kubernetes resources.
 
 Requirements
