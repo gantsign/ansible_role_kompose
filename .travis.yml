@@ -55,9 +55,6 @@ services:
 cache:
   - pip
 
-before_install:
-  - sudo apt-get -qq update
-
 install:
   # Install dependencies
   - ./moleculew wrapper-install
