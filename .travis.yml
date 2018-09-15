@@ -51,10 +51,6 @@ dist: trusty
 services:
   - docker
 
-# Cache Ansible and Molecule to speed things up
-cache:
-  - pip
-
 install:
   # Install dependencies
   - ./moleculew wrapper-install
