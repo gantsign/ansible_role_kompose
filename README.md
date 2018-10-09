@@ -11,7 +11,7 @@ converting Docker Compose files to Kubernetes resources.
 Requirements
 ------------
 
-* Ansible >= 2.4
+* Ansible >= 2.5
 
 * Linux Distribution
 
