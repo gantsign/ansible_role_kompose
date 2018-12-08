@@ -44,10 +44,10 @@ are shown below):
 
 ```yaml
 # Kompose version number
-kompose_version: '1.16.0'
+kompose_version: '1.17.0'
 
 # SHA256 sum for the redistributable Kompose package (i.e. kompose-linux-amd64.tar.gz)
-kompose_redis_sha256sum: 'de5940e74a22199c4eeb34d0b9fdae5ad65cce161e2607c7055899bc87c9c25b'
+kompose_redis_sha256sum: 'e2ff06af05334ffa6172dd451f31ac9a1d4addcd47ee449efec5558b21306b6d'
 
 # Mirror to download the Kompose from
 kompose_mirror: 'https://github.com/kubernetes/kompose/releases/download/v{{ kompose_version }}'
