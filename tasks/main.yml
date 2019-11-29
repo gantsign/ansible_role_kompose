@@ -24,11 +24,10 @@
 - name: install unarchive module dependencies (apt, yum, dnf, zypper)
   become: yes
   package:
-    name: '{{ item }}'
+    name:
+      - tar
+      - unzip
     state: present
-  with_items:
-    - tar
-    - unzip
   when: ansible_pkg_mgr in ('apt', 'yum', 'dnf', 'zypper')
 
 - name: extract Kompose
