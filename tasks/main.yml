@@ -35,6 +35,7 @@
     src: '{{ kompose_download_dir }}/{{ kompose_download_filename }}'
     remote_src: yes
     dest: '{{ kompose_staging_dir }}'
+    mode: 'o-w'
     creates: '{{ kompose_staging_dir }}/{{ kompose_redis_executable_filename }}'
 
 - name: create the Kompose installation dir
@@ -42,6 +43,7 @@
   file:
     state: directory
     dest: '{{ kompose_install_dir }}'
+    mode: 'u=rwx,go=rx'
 
 - name: install Kompose
   become: yes
