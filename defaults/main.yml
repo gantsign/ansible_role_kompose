@@ -1,9 +1,9 @@
 ---
 # Kompose version number
-kompose_version: '1.18.0'
+kompose_version: '1.23.0'
 
 # SHA256 sum for the redistributable Kompose package (i.e. kompose-linux-amd64.tar.gz)
-kompose_redis_sha256sum: 'd24d6e9f74c543925af142fafde22ed97849d215b589ab6ff2010bbbb3995fb7'
+kompose_redis_sha256sum: '1baeb1775630dbabbf8dd721ea4239eb91c926fa2d528ca48cdde54fcb3ffec4'
 
 # Mirror to download the Kompose from
 kompose_mirror: 'https://github.com/kubernetes/kompose/releases/download/v{{ kompose_version }}'
