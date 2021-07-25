@@ -1,7 +1,7 @@
 Ansible Role: Kompose
 =====================
 
-[![Build Status](https://travis-ci.com/gantsign/ansible_role_kompose.svg?branch=master)](https://travis-ci.com/gantsign/ansible_role_kompose)
+[![Tests](https://github.com/gantsign/ansible_role_kompose/workflows/Tests/badge.svg)](https://github.com/gantsign/ansible_role_kompose/actions?query=workflow%3ATests)
 [![Ansible Galaxy](https://img.shields.io/badge/ansible--galaxy-gantsign.kompose-blue.svg)](https://galaxy.ansible.com/gantsign/kompose)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/gantsign/ansible_role_kompose/master/LICENSE)
 
