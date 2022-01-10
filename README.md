@@ -44,7 +44,7 @@ are shown below):
 
 ```yaml
 # Kompose version number
-kompose_version: '1.25'
+kompose_version: '1.26.1'
 
 # SHA256 sum for the redistributable Kompose package (i.e. kompose-linux-amd64.tar.gz)
 kompose_redis_sha256sum: 'f1a4b2fbd5992d58ada809d9d67b9441a4eddef0ec6ff068714f43c95a225f9e'
