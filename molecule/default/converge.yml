@@ -10,4 +10,4 @@
       when: ansible_pkg_mgr == 'apt'
 
   roles:
-    - role: ansible_role_kompose
+    - role: kompose
