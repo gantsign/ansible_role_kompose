@@ -1,3 +1,4 @@
+# code: language=ansible
 ---
 # Kompose version number
 kompose_version: '1.28.0'
