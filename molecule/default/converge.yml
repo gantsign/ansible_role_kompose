@@ -6,8 +6,8 @@
   pre_tasks:
     - name: Update apt cache
       ansible.builtin.apt:
-        update_cache: yes
-      changed_when: no
+        update_cache: true
+      changed_when: false
       when: ansible_pkg_mgr == 'apt'
 
   roles:
